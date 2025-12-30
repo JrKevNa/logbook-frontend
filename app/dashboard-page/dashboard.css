@@ -1,0 +1,8 @@
+.menu-card {
+  transition: all 0.35s ease;
+  backdrop-filter: blur(10px);
+}
+.menu-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(59,130,246,0.15);
+}
