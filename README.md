@@ -1,3 +1,22 @@
+# Logbook Frontend
+
+A web frontend for the Logbook system built with Next.js.
+Communicates with the Logbook backend API.
+
+## Tech Stack
+- Next.js 14
+- TypeScript
+- Tailwind CSS
+
+## Requirements
+- Node.js 18+
+
+## Setup
+
+- bash
+- npm install
+- npm run dev
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
