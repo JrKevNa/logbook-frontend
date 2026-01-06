@@ -7,8 +7,8 @@ export default function Home() {
             <h1 className="text-2xl font-bold mb-4">Profile</h1> 
             <ProfileForm/>
 
-            <h1 className="text-2xl font-bold mt-4 mb-4">Change Password</h1> 
-            <ChangePasswordForm/>
+            {/* <h1 className="text-2xl font-bold mt-4 mb-4">Change Password</h1> 
+            <ChangePasswordForm/> */}
         </div>
     )
 }

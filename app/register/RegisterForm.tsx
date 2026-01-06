@@ -12,8 +12,9 @@ export default function RegisterForm() {
     const [companyName, setCompanyName] = useState('')
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [confirmPassword, setConfirmPassword] = useState('')
+    const [nik, setNik] = useState('')
+    // const [password, setPassword] = useState('')
+    // const [confirmPassword, setConfirmPassword] = useState('')
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
 
@@ -29,9 +30,10 @@ export default function RegisterForm() {
                 credentials: 'include', 
                 body: JSON.stringify({
                     companyName: companyName,
+                    nik: nik,
                     username: username,
                     email: email,
-                    password: password,
+                    // password: password,
                 }),
             });
 
@@ -62,6 +64,16 @@ export default function RegisterForm() {
             <hr/>
 
             <div>
+                <Label htmlFor="email">NIK</Label>
+                <TextInput id="email" type="text" placeholder="your nik" 
+                    value = {nik}
+                    onChange = {(e) => {
+                        setNik(e.target.value)
+                    }}
+                required />
+            </div>
+
+            <div>
                 <Label htmlFor="email">Username</Label>
                 <TextInput id="email" type="text" placeholder="your username" 
                     value = {username}
@@ -81,7 +93,7 @@ export default function RegisterForm() {
                 required />
             </div>
 
-            <div>
+            {/* <div>
                 <Label htmlFor="email">Password</Label>
                 <TextInput id="email" type="password" placeholder="your password" 
                     value = {password}
@@ -99,7 +111,7 @@ export default function RegisterForm() {
                         setConfirmPassword(e.target.value)
                     }}
                 required />
-            </div>
+            </div> */}
 
             {error && <p className="text-red-600 text-sm">{error}</p>}
 

@@ -40,8 +40,8 @@ export default function AddUserModal({
     const [username, setUsername] = useState('')
     const [nik, setNik] = useState('')
     const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [confirmPassword, setConfirmPassword] = useState('')
+    // const [password, setPassword] = useState('')
+    // const [confirmPassword, setConfirmPassword] = useState('')
 
     useEffect(() => {
         setLoading(true)
@@ -54,8 +54,8 @@ export default function AddUserModal({
                 setNik('')
                 setEmail('')
                 setSelectedRole(null)
-                setPassword('')
-                setConfirmPassword('')
+                // setPassword('')
+                // setConfirmPassword('')
             } else if (mode === 'edit' && user) {
                 setTitle('Edit')
 
@@ -64,8 +64,8 @@ export default function AddUserModal({
                 setNik(user.nik)
                 setEmail(user.email)
                 setSelectedRole(user.userRoles?.[0]?.role)
-                setPassword('')
-                setConfirmPassword('')
+                // setPassword('')
+                // setConfirmPassword('')
                 // Optionally load data to edit
             }
             setLoading(false)
@@ -120,9 +120,9 @@ export default function AddUserModal({
                 return alert('Please fill in all fields')
             }
             
-            if(password != confirmPassword) {
-                return alert('Password not match')
-            }
+            // if(password != confirmPassword) {
+            //     return alert('Password not match')
+            // }
 
             try {
                 setLoadingSubmit(true)
@@ -137,7 +137,8 @@ export default function AddUserModal({
                         'x-csrf-token': csrfToken || ''
                     },
                     credentials: 'include',
-                    body: JSON.stringify({ username, nik, email, roleId, password }),
+                    // body: JSON.stringify({ username, nik, email, roleId, password }),
+                    body: JSON.stringify({ username, nik, email, roleId }),
                 })
 
                 if (!res.ok) {
@@ -152,8 +153,8 @@ export default function AddUserModal({
                 // Success
                 setUsername('')
                 setEmail('')
-                setPassword('')
-                setConfirmPassword('')
+                // setPassword('')
+                // setConfirmPassword('')
                 onClose()
                 onUserChange()
             } catch (err: any) {
@@ -172,11 +173,11 @@ export default function AddUserModal({
                 return alert('Please fill in all fields')
             }
             
-            if (password) {
-                if(password != confirmPassword) {
-                    return alert('Password not match')
-                }
-            }
+            // if (password) {
+            //     if(password != confirmPassword) {
+            //         return alert('Password not match')
+            //     }
+            // }
 
             try {
                 setLoadingSubmit(true)
@@ -191,7 +192,8 @@ export default function AddUserModal({
                         'x-csrf-token': csrfToken || ''
                     },
                     credentials: 'include',
-                    body: JSON.stringify({ username, nik, email, roleId, password }),
+                    // body: JSON.stringify({ username, nik, email, roleId, password }),
+                    body: JSON.stringify({ username, nik, email, roleId }),
                 })
 
                 if (!res.ok) {
@@ -206,8 +208,8 @@ export default function AddUserModal({
                 // Success
                 setUsername('')
                 setEmail('')
-                setPassword('')
-                setConfirmPassword('')
+                // setPassword('')
+                // setConfirmPassword('')
                 onClose()
                 onUserChange()
             } catch (err: any) {
@@ -294,7 +296,7 @@ export default function AddUserModal({
                             </div>
 
                             {/* Password */}
-                            <div>
+                            {/* <div>
                                 <div className="mb-2 block">
                                     <Label htmlFor="durationNumber">Password</Label>
                                 </div>
@@ -306,10 +308,10 @@ export default function AddUserModal({
                                     onChange={(e) => setPassword(e.target.value)}
                                     required
                                 />
-                            </div>
+                            </div> */}
 
                             {/* Confirm Password */}
-                            <div>
+                            {/* <div>
                                 <div className="mb-2 block">
                                     <Label htmlFor="durationNumber">Confirm Password</Label>
                                 </div>
@@ -321,7 +323,7 @@ export default function AddUserModal({
                                     onChange={(e) => setConfirmPassword(e.target.value)}
                                     required
                                 />
-                            </div>
+                            </div> */}
                         </div>
                     </form>
                 )}
